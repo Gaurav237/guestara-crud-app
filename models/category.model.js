@@ -6,20 +6,27 @@ const CategorySchema = mongoose.Schema({
         required: true
     },
     image: {
-        type: String
+        type: String,
+        required: true
     },
     description: {
-        type: String
+        type: String,
+        required: true
     },
     taxApplicability: {
-        type: Boolean
+        type: Boolean,
+        required: true
     },
     tax: {
-        type: Number
+        type: Number,
+        required: false
     },
     taxType: {
-        type: String
+        type: String,
+        required: true
     }
+}, {
+    timestamps: true
 })
 
 const Category = mongoose.model('Category', CategorySchema)

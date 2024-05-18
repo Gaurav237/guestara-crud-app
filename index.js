@@ -1,11 +1,14 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const Category = require('./models/category.model')
+const categoryRoute = require('./routes/category.route')
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send("Hello server started testing...")
-})
+// midddlewares
+app.use(express.json())
 
+// routes
+app.use('/api/category', categoryRoute)
 
 mongoose.connect('mongodb+srv://gaurav237:9234valorant@backenddb.l94imz3.mongodb.net/?retryWrites=true&w=majority&appName=backendDB')
     .then(() => {
