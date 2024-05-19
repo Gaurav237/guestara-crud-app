@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const Category = require('./models/category.model')
 const categoryRoute = require('./routes/category.route')
 const subCategoryRoute = require('./routes/subcategory.route')
+const itemRoute = require('./routes/item.route')
 const app = express()
 
 // midddlewares
@@ -11,6 +12,7 @@ app.use(express.json())
 // routes
 app.use('/api/category', categoryRoute)
 app.use('/api/subcategory', subCategoryRoute)
+app.use('/api/item', itemRoute)
 
 mongoose.connect('mongodb+srv://gaurav237:9234valorant@backenddb.l94imz3.mongodb.net/?retryWrites=true&w=majority&appName=backendDB')
     .then(() => {
